@@ -126,7 +126,7 @@ envFrom:
 
 Помимо этого, заменим `configMapKeyRef` для `POSTGRES_USER` и `POSTGRES_PASSWORD` на `secretKeyRef` и `name: postgres-secret`, так как мы вынесли это в отдельный секрет `postgres-secret`.
 
-1. Для некстклауда добавить Liveness и Readiness пробы
+9. Для некстклауда добавить Liveness и Readiness пробы
 
 Добавим секции `livenessProbe` и `readinessProbe` в `yaml/nextcloyd.yml`
 
