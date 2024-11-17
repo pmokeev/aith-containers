@@ -1,0 +1,18 @@
+# Установка тяжелого образа
+FROM python:3.11
+
+# Копируем все файлы проекта в контейнер
+COPY . /app
+WORKDIR /app
+
+# Устанавливаем Poetry
+RUN pip install poetry
+
+# Устанавливаем зависимости с помощью poetry
+RUN poetry install
+
+# Определяем volume для хранения данных приложения
+VOLUME /app/data
+
+# Запускаем приложение
+CMD ["poetry", "run", "uvicorn", "api.main:app", "--host", "0.0.0.0", "--port", "8000"]
