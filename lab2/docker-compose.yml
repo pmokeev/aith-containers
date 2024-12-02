@@ -1,0 +1,66 @@
+services:
+  app:
+    build:
+      context: ./app
+      dockerfile: Dockerfile
+    image: lab2-fastapi-app:latest
+    container_name: fastapi-app
+    command: ["uvicorn", "main:app", "--host", "0.0.0.0", "--port", "8000"]
+    ports:
+      - "8000:8000"
+    depends_on:
+      db:
+        condition: service_healthy
+    networks:
+      - backend_network
+    env_file:
+      - .env
+    healthcheck:
+      test: ["CMD", "curl", "-f", "http://localhost:8000/health"]
+      interval: 30s
+      timeout: 10s
+      retries: 3
+      start_period: 10s
+
+  db:
+    build:
+      context: ./db
+      dockerfile: Dockerfile
+    image: lab2-postgres-db:latest
+    container_name: postgres-db
+    volumes:
+      - postgres_data:/var/lib/postgresql/data
+    networks:
+      - backend_network
+    env_file:
+      - .env
+    healthcheck:
+      test: ["CMD-SHELL", "pg_isready -U ${POSTGRES_USER} -d ${POSTGRES_DB}"]
+      interval: 10s
+      timeout: 5s
+      retries: 5
+      start_period: 10s
+
+  init:
+    build:
+      context: ./init
+      dockerfile: Dockerfile
+    image: lab2-db-init:latest
+    container_name: db-init
+    command: ["python", "init.py"]
+    depends_on:
+      db:
+        condition: service_healthy
+    networks:
+      - backend_network
+    env_file:
+      - .env
+
+networks:
+  backend_network:
+    name: backend_network
+    driver: bridge
+
+volumes:
+  postgres_data:
+    name: postgres_data
