@@ -36,3 +36,8 @@ minikube start
 ```
 ![doc-4](image/doc-3.png)
 ![doc-5](image/doc-4.png)
+
+
+### Container   Результаты
+
+![doc-6](image/doc-12.png)
