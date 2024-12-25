@@ -1,0 +1,32 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: llm-app
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: llm-app
+  template:
+    metadata:
+      labels:
+        app: llm-app
+    spec:
+      initContainers:
+      # init-контейнер. Настраивает БД
+      - name: llm-init
+        image: llm-init
+        envFrom:
+        - secretRef:
+            name: llm-secret
+        imagePullPolicy: Never
+      containers:
+      - name: llm-app
+        image: llm-app
+        ports:
+        - containerPort: 1337
+        command: ["sleep", "infinity"] 
+        envFrom:
+        - secretRef:
+            name: llm-secret
+        imagePullPolicy: Never
