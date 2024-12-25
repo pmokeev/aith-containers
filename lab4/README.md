@@ -10,7 +10,7 @@ docker build -t llm-app ./llm_app/
 ```
 ![doc-1](image/doc-1.png)
 
-###Tакже для Language-Model 
+### Tакже для Language-Model 
 ```bash
 
 docker build -t llm-app ./llm_app/
