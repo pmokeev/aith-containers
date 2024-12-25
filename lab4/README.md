@@ -89,3 +89,4 @@ $ kubectl get pods -n llm-app
 
 ## Executing Дашборд  minikube
 ![doc-9](image/doc-10.png)
+![doc-10](image/doc-13.png)
