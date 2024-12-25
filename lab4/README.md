@@ -47,7 +47,7 @@ minikube start
 kubectl create namespace llm-app
 
 ```
-## Applying all the manifestations 
+## Applying all the manifestations to the namespace
 
 ```bash
 kubectl apply -f secrets.yaml -n llm-app
