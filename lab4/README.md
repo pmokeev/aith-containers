@@ -35,3 +35,4 @@ docker build -t llm-app .
 minikube start.
 ```
 ![doc-4](image/doc-3.png)
+![doc-5](image/doc-4.png)
