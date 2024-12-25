@@ -83,3 +83,6 @@ $ kubectl get pods -n llm-app
         command: ["sleep", "infinity"] 
 ```
 ![doc-8](image/doc-8.png)
+
+## Executing Сервис minikube
+![doc-8](image/doc-9.png)
