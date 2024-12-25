@@ -70,3 +70,9 @@ kubectl apply -f app_service.yaml -n llm-app
 
 minikube service llm-app -n llm-app
 ```
+## Проверяем If all pods are working 
+```bash
+
+$ kubectl get pods -n llm-app
+```
+![doc-7](image/doc-7.png)
