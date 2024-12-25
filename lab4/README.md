@@ -29,4 +29,6 @@ cd ../llm_app
 docker build -t llm-app .
 ```
 ![doc-3](image/doc-11.png)
+
+### запускаем minikube
 ![doc-4](image/doc-3.png)
