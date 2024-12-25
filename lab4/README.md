@@ -82,4 +82,4 @@ $ kubectl get pods -n llm-app
         - containerPort: 1337
         command: ["sleep", "infinity"] 
 ```
-![doc-8](image/doc-9.png)
+![doc-8](image/doc-8.png)
