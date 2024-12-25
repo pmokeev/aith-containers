@@ -86,3 +86,6 @@ $ kubectl get pods -n llm-app
 
 ## Executing Сервис minikube
 ![doc-8](image/doc-9.png)
+
+## Executing Дашборд  minikube
+![doc-9](image/doc-10.png)
