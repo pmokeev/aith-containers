@@ -76,3 +76,9 @@ minikube service llm-app -n llm-app
 $ kubectl get pods -n llm-app
 ```
 ![doc-7](image/doc-7.png)
+ALL ports should be infinity 
+```bash
+ ports:
+        - containerPort: 1337
+        command: ["sleep", "infinity"] 
+```
