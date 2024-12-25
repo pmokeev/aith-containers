@@ -41,3 +41,32 @@ minikube start
 ### Container   Результаты
 
 ![doc-6](image/doc-12.png)
+
+##  создаем namespace
+```bash
+kubectl create namespace llm-app
+
+```
+## Applying all the manifestations 
+
+```bash
+kubectl apply -f secrets.yaml -n llm-app
+
+
+kubectl apply -f volume.yaml -n llm-app
+
+
+kubectl apply -f db_deploy.yaml -n llm-app
+
+
+kubectl apply -f db_service.yaml -n llm-app
+
+
+kubectl apply -f app_deploy.yaml -n llm-app
+
+
+kubectl apply -f app_service.yaml -n llm-app
+
+
+minikube service llm-app -n llm-app
+```
