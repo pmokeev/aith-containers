@@ -32,7 +32,7 @@ docker build -t llm-app .
 
 ### запускаем minikube
 ```bash
-minikube start.
+minikube start
 ```
 ![doc-4](image/doc-3.png)
 ![doc-5](image/doc-4.png)
