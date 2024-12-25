@@ -13,7 +13,7 @@ spec:
         app: llm-app
     spec:
       initContainers:
-      # init-контейнер. Настраивает БД
+     
       - name: llm-init
         image: llm-init
         envFrom:
