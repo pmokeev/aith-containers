@@ -17,3 +17,15 @@ docker build -t llm-app ./llm_app/
 ```
 ![doc-2](image/doc-2.png)
 
+### Images for the models 
+
+```bash
+# Image
+cd init
+docker build -t llm-init .
+
+# Image
+cd ../llm_app
+docker build -t llm-app .
+```
+![doc-3](image/doc-3.png)
